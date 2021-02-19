@@ -7,6 +7,9 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		background-color: rgb(56, 37, 77);
+		width: 100%;
+		position: absolute;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -69,6 +72,38 @@
 	}
 }
 
+
+
+/*---------------------------------------
+Bouton burger
+--------------------------------------*/
+.menu-toggle{
+	padding: 0rem;
+	border: 0;
+	margin-left: 3rem;
+	transition: transform .20s;
+	transform: rotate(0);
+	
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background: #b78fe6;
+}
+
+.menu-toggle:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.menu-toggle:active {
+    transform: scale(0.99);
+}
+
+.main-navigation.toggled .menu-toggle {
+	transform: rotate(90deg);
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -83,6 +118,10 @@
 
 	.main-navigation ul {
 		display: flex;
+		height: 2rem;
+		justify-content: space-around;
+		align-items: center;
+		position: static;
 	}
 }
 
