@@ -1,0 +1,13 @@
+.accueil{
+    img{
+        transition: transform .2s;
+        
+    }
+    img:hover{
+    
+        transform: scale(.5);
+        border: black 2px solid;
+        
+    }
+ 
+}
