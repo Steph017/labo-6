@@ -751,6 +751,7 @@ textarea {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  font-size: clamp(1rem, -0.875rem + 3.333vw, 1.3rem);
 }
 
 /*---------------------------------------
@@ -802,7 +803,7 @@ Bouton burger
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 2rem;
+    height: 3rem;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: center;

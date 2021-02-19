@@ -1,7 +1,6 @@
 .main-navigation {
 	display: block;
 	width: 100%;
-
 	ul {
 		display: none;
 		list-style: none;
@@ -10,6 +9,7 @@
 		background-color: rgb(209, 181, 241);
 		width: 100%;
 		position: absolute;
+	
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -63,6 +63,7 @@
 	a {
 		display: block;
 		text-decoration: none;
+		font-size: clamp(1rem, #{"-0.875rem + 3.333vw"}, 1.3rem);
 	}
 
 	.current_page_item > a,
@@ -118,11 +119,13 @@ Bouton burger
 
 	.main-navigation ul {
 		display: flex;
-		height: 2rem;
+		height: 3rem;
 		justify-content: space-around;
 		align-items: center;
 		position: static;
 	}
+
+	
 }
 
 .comment-navigation,
