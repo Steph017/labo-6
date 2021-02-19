@@ -26,7 +26,6 @@ body.home::after {
     font-family: $font_title;
     font-size: clamp(.9rem, #{"-0.875rem + 5.333vw"}, 3rem);
     font-weight: bold;
-    color: black;
     margin-bottom: 0;
     a{
         text-decoration: none;
@@ -48,5 +47,5 @@ body.home::after {
 }
 
 img{
-
+    
 }
