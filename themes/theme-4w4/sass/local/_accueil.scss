@@ -40,12 +40,16 @@ body.home::after {
 }
 
 .accueil{
-    font-size: clamp(1rem, #{"-0.875rem + 8.333vw"}, 2rem);
+    font-size: clamp(1.5rem, #{"-0.875rem + 4.333vw"}, 2rem);
     ul{
         list-style-type: none;
+        margin-left: .5em;
+    }
+    img{
+        border-radius: 25%;
+        border: rgb(196, 139, 223) solid 2px;
     }
 }
 
-img{
-    
-}
+
+
