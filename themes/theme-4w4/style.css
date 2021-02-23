@@ -669,6 +669,10 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+body {
+  overflow-x: hidden;
+}
+
 .no-sidebar .site {
   display: -ms-grid;
   display: grid;
@@ -795,6 +799,7 @@ Bouton burger
   display: block;
 }
 
+/* version tablet*/
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none;
@@ -810,6 +815,7 @@ Bouton burger
         -ms-flex-align: center;
             align-items: center;
     position: static;
+    width: 100vw;
   }
 }
 
@@ -1075,7 +1081,7 @@ Bouton burger
   margin-bottom: 1.5em;
 }
 
-/* Local
+/* Local/acceuil
 --------------------------------------------- */
 body {
   width: 100vw;
@@ -1093,7 +1099,7 @@ body.home::after {
   right: 0;
   -webkit-clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
           clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
-  background-color: #f3c4f1;
+  background-color: #fadbe8;
   z-index: -1;
 }
 
@@ -1149,6 +1155,8 @@ h1.entry-title {
   }
 }
 
+/* Local/animation
+--------------------------------------------- */
 .accueil img {
   -webkit-transition: -webkit-transform .2s;
   transition: -webkit-transform .2s;
@@ -1160,5 +1168,44 @@ h1.entry-title {
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
   border: black 2px solid;
+}
+
+/* Local/caroussel
+--------------------------------------------- */
+.carrousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300vw;
+  height: 20vh;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.carrousel div {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carrousel div:nth-of-type(1) {
+  background-color: #f8e2e5;
+}
+
+.carrousel div:nth-of-type(2) {
+  background-color: pink;
+}
+
+.carrousel div:nth-of-type(3) {
+  background-color: #b98c94;
 }
 /*# sourceMappingURL=style.css.map */

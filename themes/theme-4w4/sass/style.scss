@@ -101,8 +101,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "utilities/alignments";
 
-/* Local
+/* Local/acceuil
 --------------------------------------------- */
 @import "local/accueil";
 
+/* Local/animation
+--------------------------------------------- */
 @import "local/animations";
+
+/* Local/caroussel
+--------------------------------------------- */
+@import "local/carrousel";
+

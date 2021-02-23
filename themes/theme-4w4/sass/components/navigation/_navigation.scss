@@ -111,6 +111,7 @@ Bouton burger
 	display: block;
 }
 
+/* version tablet*/
 @media screen and (min-width: 37.5em) {
 
 	.menu-toggle {
@@ -123,6 +124,7 @@ Bouton burger
 		justify-content: space-around;
 		align-items: center;
 		position: static;
+		width: 100vw;
 	}
 
 	
