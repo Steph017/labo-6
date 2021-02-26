@@ -42,6 +42,7 @@ body.home::after {
     font-weight: normal;
     margin-top: 0;
     margin-left: 2em;
+    
 }
 
 .accueil{
@@ -55,13 +56,11 @@ body.home::after {
         
     }
     img{
-        border-radius: 65%;
         @include desktop{
             border-radius: 25%;
             border: rgb(196, 139, 223) solid 2px;
         }
     }
- 
 }
 
 h1.entry-title{

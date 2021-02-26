@@ -48,6 +48,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/*couleur pour les liens des a*/
+/*couleur liens dans menu*/
+/*couleur liens des titres*/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -695,7 +698,13 @@ body {
 
 */
 .site-branding, #primary, #colophon {
-  margin-left: 2.5rem;
+  margin-left: .5rem;
+}
+
+@media (min-width: 800px) {
+  .site-branding, #primary, #colophon {
+    margin-left: 3rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -716,6 +725,7 @@ body {
   background-color: #d1b5f1;
   width: 100%;
   position: absolute;
+  z-index: 2;
 }
 
 .main-navigation ul ul {
@@ -765,19 +775,14 @@ Bouton burger
   padding: 0rem;
   border: 0;
   margin-left: 1.5rem;
-  -webkit-transition: -webkit-transform .20s;
-  transition: -webkit-transform .20s;
-  transition: transform .20s;
-  transition: transform .20s, -webkit-transform .20s;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
 }
 
+/*
 .menu-toggle:hover,
 .menu-toggle:focus {
-  background: #5a4770;
+    background: rgb(255, 255, 255);
 }
-
+*/
 .menu-toggle:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
@@ -786,11 +791,6 @@ Bouton burger
 .menu-toggle:active {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
-}
-
-.main-navigation.toggled .menu-toggle {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
 }
 
 /* Small menu. */
@@ -1148,10 +1148,6 @@ body.home::after {
   }
 }
 
-.accueil img {
-  border-radius: 65%;
-}
-
 @media (min-width: 800px) {
   .accueil img {
     border-radius: 25%;
@@ -1228,6 +1224,34 @@ h1.entry-title {
   }
 }
 
+/*animation sur h1.entry-title*/
+h1.entry-title {
+  -webkit-animation: anim-entry-title 2s both cubic-bezier(1, 0.92, 0, 0.91);
+          animation: anim-entry-title 2s both cubic-bezier(1, 0.92, 0, 0.91);
+}
+
+@-webkit-keyframes anim-entry-title {
+  0% {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes anim-entry-title {
+  0% {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 /* Local/caroussel
 --------------------------------------------- */
 .carrousel {
@@ -1267,13 +1291,265 @@ h1.entry-title {
   background-color: #b98c94;
 }
 
+/*section boutton pour le carrousel*/
 .carrouselBoutton {
+  height: 5vh;
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e6c3d7;
+}
+
+@media (min-width: 800px) {
+  .carrouselBoutton {
+    height: 8vh;
+    width: 100vw;
+  }
+}
+
+.carrouselBoutton a {
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 800px) {
+  .carrouselBoutton a {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+}
+
+.carrouselBoutton a:hover {
+  background-color: #997b8c;
+}
+
+/* Local/buger
+--------------------------------------------- */
+/* --------------------------------------------------------------------------------------
+Les variables 
+---------------------------------------------------------------------------------------- */
+/*---------------------------------------------------------------------------------------
+Le bouton buger
+----------------------------------------------------------------------------------------- */
+#burger {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#burger div {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#burger div:nth-of-type(1) {
+  background-color: #f1b3c8;
+  -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+          clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+}
+
+#burger div:nth-of-type(2) {
+  background-color: palevioletred;
+  -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+          clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+}
+
+#burger div:nth-of-type(3) {
+  background-color: #8b3652;
+  -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+          clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+}
+
+/* -----------------------------------------------------------------------------------
+La barre du haut
+-------------------------------------------------------------------------------------- */
+@-webkit-keyframes ouvreX1 {
+  0% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+  100% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+}
+@keyframes ouvreX1 {
+  0% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+  100% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+}
+
+@-webkit-keyframes fermeX1 {
+  0% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+}
+
+@keyframes fermeX1 {
+  0% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+}
+
+.ouvreX1 {
+  -webkit-animation: ouvreX1 0.1s both;
+          animation: ouvreX1 0.1s both;
+}
+
+.fermeX1 {
+  -webkit-animation: fermeX1 0.1s both;
+          animation: fermeX1 0.1s both;
+}
+
+/* -----------------------------------------------------------------------------------
+La barre du bas
+-------------------------------------------------------------------------------------- */
+@-webkit-keyframes ouvreX3 {
+  0% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+  100% {
+    -webkit-clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+            clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+  }
+}
+@keyframes ouvreX3 {
+  0% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+  100% {
+    -webkit-clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+            clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+  }
+}
+
+@-webkit-keyframes fermeX3 {
+  0% {
+    -webkit-clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+            clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+
+@keyframes fermeX3 {
+  0% {
+    -webkit-clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+            clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+
+.ouvreX3 {
+  -webkit-animation: ouvreX3 0.1s both;
+          animation: ouvreX3 0.1s both;
+}
+
+.fermeX3 {
+  -webkit-animation: fermeX3 0.1s both;
+          animation: fermeX3 0.1s both;
+}
+
+/* -----------------------------------------------------------------------------------
+La barre du millieu
+-------------------------------------------------------------------------------------- */
+@-webkit-keyframes ouvreX2 {
+  0% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+  100% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+}
+@keyframes ouvreX2 {
+  0% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+  100% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+}
+
+@-webkit-keyframes fermeX2 {
+  0% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+}
+
+@keyframes fermeX2 {
+  0% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+}
+
+.ouvreX2 {
+  -webkit-animation: ouvreX2 0.1s both;
+          animation: ouvreX2 0.1s both;
+}
+
+.fermeX2 {
+  -webkit-animation: fermeX2 0.1s both;
+          animation: fermeX2 0.1s both;
 }
 /*# sourceMappingURL=style.css.map */
