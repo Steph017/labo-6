@@ -1,1 +1,1 @@
-https://steph017.github.io/labo3/
+https://steph017.github.io/ex2/
