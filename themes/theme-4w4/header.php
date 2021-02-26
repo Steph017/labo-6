@@ -53,9 +53,11 @@
 				<div>2</div>
 				<div>3</div>
 		</section>
-		<button id='un'>1</button>
-		<button id='deux'>2</button>
-		<button id='trois'>3</button>
+		<section class="carrouselBoutton">
+		<a id='un'>1</a>
+		<a id='deux'>2</a>
+		<a id='trois'>3</a>
+		</section>
 		<?php endif ?>	
 
 
