@@ -524,15 +524,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1;
+  color: #34095e;
 }
 
 a:visited {
-  color: #800080;
+  color: #ad65dd;
 }
 
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #000000;
 }
 
 a:focus {
@@ -1144,8 +1144,12 @@ body.home::after {
 
 @media (min-width: 800px) {
   .accueil ul {
-    margin-left: 1.5em;
+    margin-left: 1.8em;
   }
+}
+
+.accueil img {
+  border-radius: 65%;
 }
 
 @media (min-width: 800px) {

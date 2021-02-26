@@ -50,12 +50,12 @@ body.home::after {
         list-style-type: none;
         padding-left: 0;
         @include desktop{
-            margin-left: 1.5em;
+            margin-left: 1.8em;
         }
         
     }
     img{
-        
+        border-radius: 65%;
         @include desktop{
             border-radius: 25%;
             border: rgb(196, 139, 223) solid 2px;
