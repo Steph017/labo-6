@@ -1172,6 +1172,62 @@ h1.entry-title {
 
 /* Local/animation
 --------------------------------------------- */
+/*animation du titre*/
+.site-title {
+  -webkit-animation: anim-title 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+          animation: anim-title 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+}
+
+@-webkit-keyframes anim-title {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes anim-title {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*animation du description du site*/
+.site-description {
+  -webkit-animation: anim-description 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+          animation: anim-description 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+}
+
+@-webkit-keyframes anim-description {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes anim-description {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 /* Local/caroussel
 --------------------------------------------- */
 .carrousel {
@@ -1209,5 +1265,15 @@ h1.entry-title {
 
 .carrousel div:nth-of-type(3) {
   background-color: #b98c94;
+}
+
+.carrouselBoutton {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

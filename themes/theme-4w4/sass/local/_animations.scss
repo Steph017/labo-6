@@ -1,0 +1,21 @@
+/*animation du titre*/
+.site-title{
+
+    animation: anim-title 1.5s both cubic-bezier(.06,.88,.71,.58) ;
+    
+}
+
+@keyframes anim-title {
+    0% {transform: translateY(-500px);}
+    100%{transform: translateY(0);}
+}
+
+/*animation du description du site*/
+.site-description{
+    animation: anim-description 1.5s both cubic-bezier(.06,.88,.71,.58) ;
+}
+
+@keyframes anim-description {
+    0% {transform: translateX(-500px);}
+    100%{transform: translateX(0);}
+}
