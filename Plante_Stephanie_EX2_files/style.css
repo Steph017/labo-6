@@ -48,6 +48,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/*couleur pour les liens des a*/
+/*couleur liens dans menu*/
+/*couleur liens des titres*/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -524,15 +527,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1;
+  color: #34095e;
 }
 
 a:visited {
-  color: #800080;
+  color: #ad65dd;
 }
 
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #000000;
 }
 
 a:focus {
@@ -669,6 +672,10 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+body {
+  overflow-x: hidden;
+}
+
 .no-sidebar .site {
   display: -ms-grid;
   display: grid;
@@ -691,7 +698,13 @@ textarea {
 
 */
 .site-branding, #primary, #colophon {
-  margin-left: 2.5rem;
+  margin-left: .5rem;
+}
+
+@media (min-width: 800px) {
+  .site-branding, #primary, #colophon {
+    margin-left: 3rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -712,6 +725,7 @@ textarea {
   background-color: #d1b5f1;
   width: 100%;
   position: absolute;
+  z-index: 2;
 }
 
 .main-navigation ul ul {
@@ -761,19 +775,14 @@ Bouton burger
   padding: 0rem;
   border: 0;
   margin-left: 1.5rem;
-  -webkit-transition: -webkit-transform .20s;
-  transition: -webkit-transform .20s;
-  transition: transform .20s;
-  transition: transform .20s, -webkit-transform .20s;
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
 }
 
+/*
 .menu-toggle:hover,
 .menu-toggle:focus {
-  background: #5a4770;
+    background: rgb(255, 255, 255);
 }
-
+*/
 .menu-toggle:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
@@ -784,17 +793,13 @@ Bouton burger
           transform: scale(0.99);
 }
 
-.main-navigation.toggled .menu-toggle {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
 }
 
+/* version tablet*/
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none;
@@ -810,6 +815,7 @@ Bouton burger
         -ms-flex-align: center;
             align-items: center;
     position: static;
+    width: 100vw;
   }
 }
 
@@ -1075,16 +1081,20 @@ Bouton burger
   margin-bottom: 1.5em;
 }
 
-/* Local
+/* Local/acceuil
 --------------------------------------------- */
-body {
+body.home {
   width: 100vw;
   height: 100vh;
 }
 
+body.home #primary {
+  width: 100vw;
+}
+
 body.home::after {
   width: 100%;
-  height: 145%;
+  height: 160%;
   content: '';
   position: absolute;
   top: 0;
@@ -1093,7 +1103,7 @@ body.home::after {
   right: 0;
   -webkit-clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
           clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
-  background-color: #f3c4f1;
+  background-color: #fadbe8;
   z-index: -1;
 }
 
@@ -1129,17 +1139,24 @@ body.home::after {
 
 .accueil ul {
   list-style-type: none;
-  margin-left: .5em;
+  padding-left: 0;
 }
 
-.accueil img {
-  border-radius: 25%;
-  height: 200px;
-  border: #c48bdf solid 2px;
+@media (min-width: 800px) {
+  .accueil ul {
+    margin-left: 1.8em;
+  }
+}
+
+@media (min-width: 800px) {
+  .accueil img {
+    border-radius: 25%;
+    border: #c48bdf solid 2px;
+  }
 }
 
 h1.entry-title {
-  margin-left: 2em;
+  margin-left: 0em;
   font-size: clamp(1.5rem, -0.875rem + 4.333vw, 2.5rem);
 }
 
@@ -1149,16 +1166,390 @@ h1.entry-title {
   }
 }
 
-.accueil img {
-  -webkit-transition: -webkit-transform .2s;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
+/* Local/animation
+--------------------------------------------- */
+/*animation du titre*/
+.site-title {
+  -webkit-animation: anim-title 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+          animation: anim-title 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
 }
 
-.accueil img:hover {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
-  border: black 2px solid;
+@-webkit-keyframes anim-title {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes anim-title {
+  0% {
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*animation du description du site*/
+.site-description {
+  -webkit-animation: anim-description 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+          animation: anim-description 1.5s both cubic-bezier(0.06, 0.88, 0.71, 0.58);
+}
+
+@-webkit-keyframes anim-description {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes anim-description {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*animation sur h1.entry-title*/
+h1.entry-title {
+  -webkit-animation: anim-entry-title 2s both cubic-bezier(1, 0.92, 0, 0.91);
+          animation: anim-entry-title 2s both cubic-bezier(1, 0.92, 0, 0.91);
+}
+
+@-webkit-keyframes anim-entry-title {
+  0% {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes anim-entry-title {
+  0% {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/* Local/caroussel
+--------------------------------------------- */
+.carrousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300vw;
+  height: 20vh;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.carrousel div {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carrousel div:nth-of-type(1) {
+  background-color: #f8e2e5;
+}
+
+.carrousel div:nth-of-type(2) {
+  background-color: pink;
+}
+
+.carrousel div:nth-of-type(3) {
+  background-color: #b98c94;
+}
+
+/*section boutton pour le carrousel*/
+.carrouselBoutton {
+  height: 5vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e6c3d7;
+}
+
+@media (min-width: 800px) {
+  .carrouselBoutton {
+    height: 8vh;
+    width: 100vw;
+  }
+}
+
+.carrouselBoutton a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 800px) {
+  .carrouselBoutton a {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+}
+
+.carrouselBoutton a:hover {
+  background-color: #997b8c;
+}
+
+/* Local/buger
+--------------------------------------------- */
+/* --------------------------------------------------------------------------------------
+Les variables 
+---------------------------------------------------------------------------------------- */
+/*---------------------------------------------------------------------------------------
+Le bouton buger
+----------------------------------------------------------------------------------------- */
+#burger {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#burger div {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#burger div:nth-of-type(1) {
+  background-color: #f1b3c8;
+  -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+          clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+}
+
+#burger div:nth-of-type(2) {
+  background-color: palevioletred;
+  -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+          clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+}
+
+#burger div:nth-of-type(3) {
+  background-color: #8b3652;
+  -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+          clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+}
+
+/* -----------------------------------------------------------------------------------
+La barre du haut
+-------------------------------------------------------------------------------------- */
+@-webkit-keyframes ouvreX1 {
+  0% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+  100% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+}
+@keyframes ouvreX1 {
+  0% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+  100% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+}
+
+@-webkit-keyframes fermeX1 {
+  0% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+}
+
+@keyframes fermeX1 {
+  0% {
+    -webkit-clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+            clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+            clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
+  }
+}
+
+.ouvreX1 {
+  -webkit-animation: ouvreX1 0.1s both;
+          animation: ouvreX1 0.1s both;
+}
+
+.fermeX1 {
+  -webkit-animation: fermeX1 0.1s both;
+          animation: fermeX1 0.1s both;
+}
+
+/* -----------------------------------------------------------------------------------
+La barre du bas
+-------------------------------------------------------------------------------------- */
+@-webkit-keyframes ouvreX3 {
+  0% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+  100% {
+    -webkit-clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+            clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+  }
+}
+@keyframes ouvreX3 {
+  0% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+  100% {
+    -webkit-clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+            clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+  }
+}
+
+@-webkit-keyframes fermeX3 {
+  0% {
+    -webkit-clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+            clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+
+@keyframes fermeX3 {
+  0% {
+    -webkit-clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+            clip-path: polygon(-4% 96%, 96% -4%, 104% 4%, 4% 104%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+            clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+  }
+}
+
+.ouvreX3 {
+  -webkit-animation: ouvreX3 0.1s both;
+          animation: ouvreX3 0.1s both;
+}
+
+.fermeX3 {
+  -webkit-animation: fermeX3 0.1s both;
+          animation: fermeX3 0.1s both;
+}
+
+/* -----------------------------------------------------------------------------------
+La barre du millieu
+-------------------------------------------------------------------------------------- */
+@-webkit-keyframes ouvreX2 {
+  0% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+  100% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+}
+@keyframes ouvreX2 {
+  0% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+  100% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+}
+
+@-webkit-keyframes fermeX2 {
+  0% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+}
+
+@keyframes fermeX2 {
+  0% {
+    -webkit-clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+            clip-path: polygon(48% 48%, 52% 48%, 52% 52%, 48% 52%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+            clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+}
+
+.ouvreX2 {
+  -webkit-animation: ouvreX2 0.1s both;
+          animation: ouvreX2 0.1s both;
+}
+
+.fermeX2 {
+  -webkit-animation: fermeX2 0.1s both;
+          animation: fermeX2 0.1s both;
 }
 /*# sourceMappingURL=style.css.map */
