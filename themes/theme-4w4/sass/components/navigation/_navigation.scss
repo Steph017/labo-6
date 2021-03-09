@@ -110,6 +110,14 @@ Bouton burger
 /* version tablet*/
 @media screen and (min-width: 37.5em) {
 
+	.main-navigation.toggled ul,
+	.main-navigation ul {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height : 2.5rem;
+		width : 100%;
+	}
 	.menu-toggle {
 		display: none;
 		
@@ -123,6 +131,16 @@ Bouton burger
 		position: static;
 		width: 100vw;
 		
+		
+		ul{
+			position: absolute;
+			width: 300px;
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
 	}
 
 	

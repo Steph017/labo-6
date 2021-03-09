@@ -801,6 +801,19 @@ Bouton burger
 
 /* version tablet*/
 @media screen and (min-width: 37.5em) {
+  .main-navigation.toggled ul,
+  .main-navigation ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 2.5rem;
+    width: 100%;
+  }
   .menu-toggle {
     display: none;
   }
@@ -816,6 +829,24 @@ Bouton burger
             align-items: center;
     position: static;
     width: 100vw;
+  }
+  .main-navigation ul ul {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 }
 
