@@ -548,7 +548,6 @@ a:hover, a:active {
 
 .main-navigation a {
   color: #ffffff;
-  margin-left: 3rem;
 }
 
 .main-navigation a:visited {
@@ -714,75 +713,83 @@ body {
 --------------------------------------------- */
 .main-navigation {
   display: block;
-  width: 100%;
+  width: 100vw;
 }
 
 .main-navigation ul {
   display: none;
+  position: absolute;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: #d1b5f1;
-  width: 100%;
-  position: absolute;
+  background-color: #000;
   z-index: 2;
 }
 
 .main-navigation ul ul {
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
   top: 100%;
+  -webkit-transition: left .5s;
+  transition: left .5s;
   left: -999em;
   z-index: 99999;
 }
 
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  display: block;
-  left: auto;
-}
-
 .main-navigation ul ul a {
   width: 200px;
+  padding-left: 20px;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-  left: auto;
+  left: 0;
+}
+
+.main-navigation ul li > a[href="#"]::after {
+  content: "+";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 90%;
+  right: 0;
+}
+
+.main-navigation ul li.focus > a[href="#"]::after,
+.main-navigation ul li > a[href="#"]:hover::after {
+  content: "-";
 }
 
 .main-navigation li {
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .main-navigation a {
   display: block;
   text-decoration: none;
-  font-size: clamp(1rem, -0.875rem + 3.333vw, 1.3rem);
+  padding: .5rem;
 }
 
-/*---------------------------------------
-Bouton burger
---------------------------------------*/
+/* -----------------------------------------------------------------------------
+Bouton burger 
+------------------------------------------------------------------------------*/
 .menu-toggle {
-  padding: 0rem;
+  padding: 0;
   border: 0;
-  margin-left: 1.5rem;
 }
 
-/*
 .menu-toggle:hover,
 .menu-toggle:focus {
-    background: rgb(255, 255, 255);
+  background: #fafbfc;
 }
-*/
+
 .menu-toggle:focus {
   outline: 1px solid #fff;
   outline-offset: -4px;
@@ -793,60 +800,46 @@ Bouton burger
           transform: scale(0.99);
 }
 
-/* Small menu. */
+/*
+.main-navigation.toggled .menu-toggle{
+	transform : rotate(90deg);
+}
+*/
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
 }
 
-/* version tablet*/
+/* ---------------------------------------------------------------------------
+menu tablet
+------------------------------------------------------------------------------ */
 @media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
   .main-navigation.toggled ul,
   .main-navigation ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    position: static;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 2.5rem;
-    width: 100%;
   }
-  .menu-toggle {
+  .main-navigation.toggled ul a[href="#"]::after,
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
-  .main-navigation ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 3rem;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: static;
-    width: 100vw;
-  }
-  .main-navigation ul ul {
+  .main-navigation.toggled ul li:hover ul,
+  .main-navigation ul li:hover ul {
+    display: block;
     position: absolute;
     width: 300px;
-    height: 400px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    height: 500px;
+  }
+  .main-navigation.toggled ul ul,
+  .main-navigation ul ul {
+    display: none;
   }
 }
 
@@ -1135,7 +1128,7 @@ body.home::after {
   -webkit-clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
           clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
   background-color: #fadbe8;
-  z-index: -1;
+  z-index: -2;
 }
 
 @media (min-width: 800px) {
@@ -1177,6 +1170,10 @@ body.home::after {
   .accueil ul {
     margin-left: 1.8em;
   }
+}
+
+.accueil img {
+  z-index: -1;
 }
 
 @media (min-width: 800px) {
