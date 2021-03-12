@@ -740,7 +740,7 @@ body {
 
 .main-navigation ul ul a {
   width: 200px;
-  padding-left: 20px;
+  padding-left: 15px;
 }
 
 .main-navigation ul li:hover > ul,
@@ -836,6 +836,7 @@ menu tablet
     position: absolute;
     width: 200px;
     height: 650px;
+    background-color: #f8cfdf;
   }
   .main-navigation.toggled ul li:hover ul a,
   .main-navigation ul li:hover ul a {
