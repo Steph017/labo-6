@@ -45,21 +45,7 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<!-- Debut du carrousel -->
-		<?php
-		if ( is_front_page()) : ?>
-		<section class="carrousel">
-				<div>1</div>
-				<div>2</div>
-				<div>3</div>
-		</section>
-		<section class="carrouselBoutton">
-		<a href="#" id='un'>1</a>
-		<a href="#" id='deux'>2</a>
-		<a href="#" id='trois'>3</a>
-		</section>
-		<?php endif ?>	
-	<!-- fin du carrousel -->
+		
 
 	
 		<nav id="site-navigation" class="main-navigation">
@@ -77,4 +63,19 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<!-- Debut du carrousel -->
+		<?php
+		if ( is_front_page()) : ?>
+		<section class="carrousel">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+		</section>
+		<section class="carrouselBoutton">
+		<a href="#" id='un'>1</a>
+		<a href="#" id='deux'>2</a>
+		<a href="#" id='trois'>3</a>
+		</section>
+		<?php endif ?>	
+	<!-- fin du carrousel -->
 	</header><!-- #masthead -->

@@ -10,7 +10,7 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background-color: #000;
+		background-color: #e6c3d7;
 		z-index: 2;
 	
 	
@@ -20,7 +20,7 @@
 			//float: left;
 			position: absolute;
 			top: 100%;
-			transition: left .5s;
+			transition: left .3s;
 			left: -999em;
 			z-index: 99999;
 
@@ -46,6 +46,7 @@
 			bottom: 0;
 			left: 90%;
 			right: 0;
+			
 		}
 		li.focus > a[href="#"]::after,
 		li > a[href="#"]:hover::after{
@@ -130,8 +131,11 @@ menu tablet
 		li:hover ul{
 			display: block;
 			position: absolute;
-			width: 300px;
-			height: 500px;
+			width: 200px;
+			height: 650px;
+			a{
+				border-bottom: black 2px solid;
+			}
 		}
 		ul{
 			display: none;

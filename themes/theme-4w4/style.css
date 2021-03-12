@@ -723,7 +723,7 @@ body {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: #000;
+  background-color: #e6c3d7;
   z-index: 2;
 }
 
@@ -732,8 +732,8 @@ body {
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 100%;
-  -webkit-transition: left .5s;
-  transition: left .5s;
+  -webkit-transition: left .3s;
+  transition: left .3s;
   left: -999em;
   z-index: 99999;
 }
@@ -834,8 +834,12 @@ menu tablet
   .main-navigation ul li:hover ul {
     display: block;
     position: absolute;
-    width: 300px;
-    height: 500px;
+    width: 200px;
+    height: 650px;
+  }
+  .main-navigation.toggled ul li:hover ul a,
+  .main-navigation ul li:hover ul a {
+    border-bottom: black 2px solid;
   }
   .main-navigation.toggled ul ul,
   .main-navigation ul ul {
@@ -1580,4 +1584,7 @@ La barre du millieu
   -webkit-animation: fermeX2 0.1s both;
           animation: fermeX2 0.1s both;
 }
+
+/* Local/frontpage
+--------------------------------------------- */
 /*# sourceMappingURL=style.css.map */
