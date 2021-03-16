@@ -1162,32 +1162,25 @@ body.home::after {
   margin-left: 2em;
 }
 
-.accueil {
-  font-size: clamp(1rem, -0.875rem + 4.333vw, 2rem);
+/*.accueil{
+    font-size: clamp(1rem, -0.875rem + 4.333vw, 2rem);
+    ul{
+        list-style-type: none;
+        padding-left: 0;
+        @include desktop{
+            margin-left: 1.8em;
+        }
+        
+    }
+    img{
+        z-index: -1;
+        @include desktop{
+            border-radius: 25%;
+            border: rgb(196, 139, 223) solid 2px;
+        }
+    }
 }
-
-.accueil ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-@media (min-width: 800px) {
-  .accueil ul {
-    margin-left: 1.8em;
-  }
-}
-
-.accueil img {
-  z-index: -1;
-}
-
-@media (min-width: 800px) {
-  .accueil img {
-    border-radius: 25%;
-    border: #c48bdf solid 2px;
-  }
-}
-
+*/
 h1.entry-title {
   margin-left: 0em;
   font-size: clamp(1.5rem, -0.875rem + 4.333vw, 2.5rem);
@@ -1197,6 +1190,57 @@ h1.entry-title {
   h1.entry-title {
     margin-left: 1.5em;
   }
+}
+
+.list-cours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list-cours section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list-cours section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  border: 1px solid black;
+}
+
+.list-cours section article p {
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+.list-cours section article a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /* Local/animation

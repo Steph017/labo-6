@@ -45,7 +45,7 @@ body.home::after {
     
 }
 
-.accueil{
+/*.accueil{
     font-size: clamp(1rem, #{"-0.875rem + 4.333vw"}, 2rem);
     ul{
         list-style-type: none;
@@ -63,6 +63,7 @@ body.home::after {
         }
     }
 }
+*/
 
 h1.entry-title{
     margin-left: 0em;
@@ -72,4 +73,31 @@ h1.entry-title{
     }
 }
 
+.list-cours{
+        display: flex;
+        flex-direction: column;
 
+        section{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            article{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 30%;
+                border: 1px solid black;
+                p{
+                    font-size: .7rem;
+                    font-weight: bold;
+                }
+                a{
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+            }
+        }
+}
