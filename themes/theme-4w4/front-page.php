@@ -19,9 +19,9 @@ get_header();
 				<div>3</div>
 		</section>
 		<section class="carrouselBoutton">
-		<a href="#" id='un'>1</a>
-		<a href="#" id='deux'>2</a>
-		<a href="#" id='trois'>3</a>
+		<input type="radio" id='un' name="radio" value="other">
+		<input type="radio" id='deux' name="radio" value="other">
+		<input type="radio" id='trois' name="radio" value="other">
 		</section>
 		<?php  ?>	
 	<!-- fin du carrousel -->
@@ -49,17 +49,20 @@ get_header();
 				$titre = substr($titre_grand,8, -6);
 				$sigle = substr($titre_grand,0, 7);
 				$typeCours = get_field('type_de_cours');
-               if ($precedent != $typeCours) : ?>
-				<?php if ($precedent != "XXXXXXX"): ?>
-				</section>
+
+
+               if ( $typeCours != $precedent) : ?>
+					<?php if ($precedent != "XXXXXXX"): ?>
+					</section>
+					<?php endif ?>
+					<h2><?php echo $typeCours; ?></h2>		
+					<section>
 				<?php endif ?>
-				<h2><?php echo $typeCours; ?></h2>		
-				<section>
-				<?php endif ?>
+
 			   <article>
-			   	<p> <?php echo $sigle . "-" . $nbHeure . "-" . $typeCours; ?> </p>
-				<a href="<?php echo get_permalink(); ?>"> <?php echo $titre; ?></a>   
-				<p> session : <?php echo $session; ?> </p>
+					<p> <?php echo $sigle . "-" . $nbHeure . "-" . $typeCours; ?> </p>
+					<a href="<?php echo get_permalink(); ?>"> <?php echo $titre; ?></a>   
+					<p> session : <?php echo $session; ?> </p>
 			   </article>
 			   
 		<?php
