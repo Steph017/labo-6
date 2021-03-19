@@ -22,6 +22,17 @@
 
 
     }
+
+    div{
+        display: flex;
+        flex-direction: column;
+            a:hover{
+                opacity: 80%;
+            }
+            img{
+                margin-top: 1em;
+            }
+    }
 }
 
 /*section boutton pour le carrousel*/

@@ -1386,6 +1386,24 @@ h1.entry-title {
   background-color: #b98c94;
 }
 
+.carrousel div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.carrousel div a:hover {
+  opacity: 80%;
+}
+
+.carrousel div img {
+  margin-top: 1em;
+}
+
 /*section boutton pour le carrousel*/
 .carrouselBoutton {
   height: 5vh;
