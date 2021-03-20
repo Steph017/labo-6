@@ -1674,4 +1674,22 @@ La barre du millieu
 
 /* Local/TypeDecours
 --------------------------------------------- */
+.list-cours .type-cours article .icone {
+  margin-top: 5em;
+}
+
+.list-cours .type-cours article a.titre {
+  font-size: 1.2em;
+  padding-bottom: 5px;
+}
+
+.list-cours .type-cours article p {
+  font-size: 1em;
+}
+
+@media (min-width: 1200px) {
+  .list-cours .type-cours article a.titre {
+    font-size: 1.3em;
+  }
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,21 @@
+.list-cours{
+    .type-cours{
+        article{
+           .icone{
+               margin-top: 5em;
+           }
+           a.titre{
+               font-size: 1.2em;
+               padding-bottom: 5px;
+           }
+           p{
+               font-size: 1em;
+           }
+           @include desktop{
+            a.titre{
+                font-size: 1.3em;
+            }
+           }
+        }
+    }
+}
