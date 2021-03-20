@@ -527,15 +527,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #34095e;
+  color: #000000;
 }
 
 a:visited {
-  color: #ad65dd;
+  color: #d85ca0;
 }
 
 a:hover, a:focus, a:active {
-  color: #000000;
+  color: #7a1f6e;
 }
 
 a:focus {
@@ -547,11 +547,11 @@ a:hover, a:active {
 }
 
 .main-navigation a {
-  color: #ffffff;
+  color: #612e4c;
 }
 
 .main-navigation a:visited {
-  color: #784f94;
+  color: #ffffff;
 }
 
 .main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
@@ -567,16 +567,16 @@ a:hover, a:active {
 }
 
 .site-title a {
-  color: #42136e;
+  color: #000000;
   margin-left: 3rem;
 }
 
 .site-title a:visited {
-  color: #ca97e2;
+  color: #581840;
 }
 
 .site-title a:hover, .site-title a:focus, .site-title a:active {
-  color: #07000c;
+  color: #000000;
 }
 
 .site-title a:focus {
@@ -700,7 +700,7 @@ body {
   margin-left: .5rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   .site-branding, #primary, #colophon {
     margin-left: 3rem;
   }
@@ -723,7 +723,7 @@ body {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: #e6c3d7;
+  background-color: #EE82AF;
   z-index: 2;
 }
 
@@ -1114,7 +1114,7 @@ menu tablet
 --------------------------------------------- */
 body.home {
   width: 100vw;
-  height: 100vh;
+  height: 600vh;
 }
 
 body.home #primary {
@@ -1136,10 +1136,10 @@ body.home::after {
   z-index: -2;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   body.home::after {
-    -webkit-clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 100%);
-            clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 100%);
+    -webkit-clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 0);
+            clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 0);
   }
 }
 
@@ -1162,40 +1162,102 @@ body.home::after {
   margin-left: 2em;
 }
 
-.accueil {
-  font-size: clamp(1rem, -0.875rem + 4.333vw, 2rem);
+/*.accueil{
+    font-size: clamp(1rem, -0.875rem + 4.333vw, 2rem);
+    ul{
+        list-style-type: none;
+        padding-left: 0;
+        @include desktop{
+            margin-left: 1.8em;
+        }
+        
+    }
+    img{
+        z-index: -1;
+        @include desktop{
+            border-radius: 25%;
+            border: rgb(196, 139, 223) solid 2px;
+        }
+    }
 }
-
-.accueil ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-@media (min-width: 800px) {
-  .accueil ul {
-    margin-left: 1.8em;
-  }
-}
-
-.accueil img {
-  z-index: -1;
-}
-
-@media (min-width: 800px) {
-  .accueil img {
-    border-radius: 25%;
-    border: #c48bdf solid 2px;
-  }
-}
-
+*/
 h1.entry-title {
   margin-left: 0em;
   font-size: clamp(1.5rem, -0.875rem + 4.333vw, 2.5rem);
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   h1.entry-title {
     margin-left: 1.5em;
+  }
+}
+
+/* ------------------------------------------------------------------------
+Liste des blocs cours par type 
+--------------------------------------------------------------------------- */
+.list-cours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list-cours section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list-cours section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 1%;
+  border: 1px solid black;
+}
+
+.list-cours section article p {
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+.list-cours section article a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+@media (min-width: 800px) {
+  .list-cours section article {
+    width: 45%;
+    margin: 1%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list-cours section article {
+    width: 30%;
+    margin: 1%;
   }
 }
 
@@ -1313,15 +1375,33 @@ h1.entry-title {
 }
 
 .carrousel div:nth-of-type(1) {
-  background-color: #f8e2e5;
+  background-color: #F7C5DA;
 }
 
 .carrousel div:nth-of-type(2) {
-  background-color: pink;
+  background-color: #F4AECB;
 }
 
 .carrousel div:nth-of-type(3) {
-  background-color: #b98c94;
+  background-color: #F198BD;
+}
+
+.carrousel div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.carrousel div a:hover {
+  opacity: 80%;
+}
+
+.carrousel div img {
+  margin-top: 1em;
 }
 
 /*section boutton pour le carrousel*/
@@ -1337,10 +1417,10 @@ h1.entry-title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #e6c3d7;
+  background-color: #EE82AF;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   .carrouselBoutton {
     height: 8vh;
     width: 100vw;
@@ -1364,7 +1444,7 @@ h1.entry-title {
   border-radius: 50%;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1200px) {
   .carrouselBoutton a {
     width: 3rem;
     height: 3rem;
@@ -1590,5 +1670,92 @@ La barre du millieu
 --------------------------------------------- */
 .page-title {
   color: black;
+}
+
+/* Local/TypeDecours
+--------------------------------------------- */
+/*---------------------------------------------------------------
+css pour les blocs de cours
+----------------------------------------------------------------- */
+.list-cours h2 {
+  margin-left: 2%;
+  font-size: 2.5em;
+}
+
+.list-cours .type-cours article .icone {
+  margin-top: 5em;
+}
+
+.list-cours .type-cours article a.titre {
+  font-size: 1.2em;
+  padding-bottom: 5px;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.list-cours .type-cours article a.titre:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.list-cours .type-cours article p {
+  font-size: 1em;
+}
+
+@media (min-width: 1200px) {
+  .list-cours .type-cours article a.titre {
+    font-size: 1.3em;
+  }
+}
+
+/* Local/footer
+--------------------------------------------- */
+footer {
+  background-color: #eba2c0;
+  height: 18vh;
+  width: 95vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .site-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 9.5em;
+}
+
+footer .site-info a {
+  border-bottom: black solid 1px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1200px) {
+  footer {
+    height: 10vh;
+  }
+  footer .site-info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: 15em;
+  }
+  footer .site-info a {
+    border: none;
+    margin-right: 20em;
+    margin-left: 1.5em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
