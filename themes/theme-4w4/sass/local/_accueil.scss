@@ -1,6 +1,6 @@
 body.home{
     width: 100vw;
-    height: 100vh;
+    height: 600vh;
 
     #primary{
         width: 100vw;
@@ -17,10 +17,10 @@ body.home::after {
     left:0;
     right:0;
     clip-path: polygon(100% 90%, 100% 100%, 100% 100%, 70% 100%);
-    background-color: rgb(250, 219, 232);
+    background-color: #fadbe8;
     z-index: -2;
     @include desktop{
-        clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 100%);
+        clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 0);
         
     }
 }
