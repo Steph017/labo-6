@@ -102,14 +102,18 @@ Liste des blocs cours par type
                     text-decoration: none;
                 }
             }
-        
+/*-----------------------------------
+css acceuil pour tablet
+------------------------------------- */        
         @include tablet{
             article{
                 width: 45%;
                 margin: 1%;
             }
         }
-
+/*-----------------------------------
+css acceuil desktop
+------------------------------------- */
         @include desktop{
             article{
                 width: 30%;

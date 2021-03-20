@@ -74,7 +74,7 @@ get_header();
 					<!-- code pour aller chercher les categories -->		
 					<section class='type-cours <?php echo (preg_replace('/\s+|\//', '', $typeCours))?>'>
 				<?php endif ?>
-
+					<!-- modification de la forme des blocs de cours -->	
 			   <article>
 			   		<p class="icone"><?php echo selectionne_icone($typeCours);?></p>
 					<a class="titre" href="<?php echo get_permalink(); ?>"> <?php echo $titre; ?></a>
@@ -117,7 +117,7 @@ function selectionne_icone($typeCours){
 	}
 }
 /*-------------------------------------------------------------
-ajout de SVG du type de cours
+ajout de SVG par type de cours
 --------------------------------------------------------------- */
 function selectionne_SVG($typeCours){
 	switch($typeCours){
