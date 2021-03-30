@@ -79,7 +79,7 @@ Liste des blocs cours par type
         display: flex;
         flex-direction: column;
 
-        section{
+        section.bloc{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -123,4 +123,14 @@ css acceuil desktop
         }   
     }
 
+    .ctrl-carrousel{
+        height: 5vh;
+        width: 95vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #EE82AF;
+    }
+
 }
+

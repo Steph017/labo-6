@@ -11,34 +11,45 @@ get_header();
 ?>
 
 <!-- Debut du carrousel -->
-<?php
-		  ?>
-		<section class="carrousel">
-				<div>
-					<a href="http://localhost/4w4/2020/10/07/582-1w1-mise-en-page-web-75h/">
-						<img src="https://s2.svgbox.net/illlustrations.svg?ic=app-development&color=000000" width="250" height="250">
-					</a>
-					<p>Mise en page web - Session 1</p>
+
+	<!--	<section class="carrousel-2">
+			<article class="slide__conteneur">
+				<div class="slide">
+					<img src="" alt="">
+					<div class="slide__info">
+						<p>582-4W4 - 90H - WEB</p>
+						<a href="http://localhost/4w4/2020/10/07/582-3w3-creation-de-sites-web-dynamiques-90h/">Création de site web dynamique</a>
+						<p>Session : 4</p>
+					</div>
 				</div>
-				<div>
-					<a href="http://localhost/4w4/2020/10/07/582-3c1-design-dinteractivite-75h/">
-						<img src="https://s2.svgbox.net/illlustrations.svg?ic=ui-ux&color=000000" width="250" height="250">
-					</a>
-						<p>Design d'interactivité - Session 3</p>
+			</article>
+			<article class="slide__conteneur">
+				<div class="slide">
+					<img src="" alt="">
+					<div class="slide__info">
+						<p>582-4W4 - 90H - WEB</p>
+						<a href="http://localhost/4w4/2020/10/07/582-3w3-creation-de-sites-web-dynamiques-90h/">Création de site web dynamique</a>
+						<p>Session : 4</p>
+					</div>
 				</div>
-				<div>
-					<a href="http://localhost/4w4/2020/10/07/description-du-cours-582-1m2-conception-graphique-et-imagerie-matricielle/">
-						<img src="https://s2.svgbox.net/illlustrations.svg?ic=wacom-tablet&color=000000" width="150" height="150">
-					</a>
-						<p>Conception graphique et imagerie matricielle - Session 1</p>
+			</article>
+			<article class="slide__conteneur">
+				<div class="slide">
+					<img src="" alt="">
+					<div class="slide__info">
+						<p>582-4W4 - 90H - WEB</p>
+						<a href="http://localhost/4w4/2020/10/07/582-3w3-creation-de-sites-web-dynamiques-90h/">Création de site web dynamique</a>
+						<p>Session : 4</p>
+					</div>
 				</div>
+			</article>
 		</section>
-		<section class="carrouselBoutton">
-		<input type="radio" id='un' name="radio" value="other">
-		<input type="radio" id='deux' name="radio" value="other">
-		<input type="radio" id='trois' name="radio" value="other">
-		</section>
-		<?php  ?>	
+		<section class="ctrl-carrousel">
+		<input type="radio" name="radio">
+		<input type="radio"  name="radio">
+		<input type="radio" name="radio">
+		</section>-->
+		
 	<!-- fin du carrousel -->
 
 //////////////////////////// FRONT-PAGE.PHP
@@ -56,44 +67,61 @@ get_header();
 			<?php
 			/* Start the Loop */
             $precedent = "XXXXXXX";
+			$ctrl_radio = "";
 			while ( have_posts() ) :
 				the_post();
-                $titre_grand = get_the_title();
-				$session = substr($titre_grand,4, 1);
-				$nbHeure = substr($titre_grand,-4, 3);
-				$titre = substr($titre_grand,8, -6);
-				$sigle = substr($titre_grand,0, 7);
-				$typeCours = get_field('type_de_cours');
-
-
-               if ( $typeCours != $precedent) : ?>
+               convertir_tableau($tPropriété);
+               if ( $precedent != $tPropriété['typeCours']) : ?>
 					<?php if ($precedent != "XXXXXXX"): ?>
 					</section>
 					<?php endif ?>
-					<h2><?php echo $typeCours; ?></h2>
+					<?php if ($precedent == "Web"): ?>
+							<section class="ctrl-carrousel">
+								<?php echo $ctrl_radio; ?>
+							</section>
+						<?php endif; ?>
+					<h2><?php echo $tPropriété['typeCours'] ?></h2>
 					<!-- code pour aller chercher les categories -->		
-					<section class='type-cours <?php echo (preg_replace('/\s+|\//', '', $typeCours))?>'>
-				<?php endif ?>
-					<!-- modification de la forme des blocs de cours -->	
-			   <article>
-			   		<p class="icone"><?php echo selectionne_icone($typeCours);?></p>
-					<a class="titre" href="<?php echo get_permalink(); ?>"> <?php echo $titre; ?></a>
-					<p class="infoCours"> <?php echo $sigle . "-" . $nbHeure . "-" . $typeCours; ?> </p>  
-					<p class="infoCours" > session : <?php echo $session; ?> </p>
-					<?php echo selectionne_SVG($typeCours);?>
-			   </article>
-			   
-		<?php
-		$precedent = $typeCours;
-	 	endwhile; ?>
-		
+						<section <?php echo ($tPropriété['typeCours'] == 'Web' ? 'class="carrousel-2"' : 'class="bloc"'); ?>>
+
+						
+					<?php endif; ?>
+
+					<!-- modification de la forme des blocs de cours -->
+							   
+				<?php
+				if ($tPropriété['typeCours'] == "Web"): 	
+					get_template_part( 'template-parts/content', 'carrousel' );
+					$ctrl_radio .= '<input type="radio" name="radio">';
+				else:
+					get_template_part( 'template-parts/content', 'bloc' );
+				endif;
+				$precedent = $tPropriété['typeCours'];
+			
+			endwhile; ?>
 				</section>
 		<?php endif; ?>
+
+
 	</main><!-- #main -->
 
 <?php
 get_sidebar();
 get_footer();
+
+function convertir_tableau(&$tPropriété){
+	
+	$titre_grand = get_the_title();
+	$tPropriété['session'] = substr($titre_grand,4, 1);
+	$tPropriété['nbHeure'] = substr($titre_grand,-4, 3);
+	$tPropriété['titre'] = substr($titre_grand,8, -6);
+	$tPropriété['sigle'] = substr($titre_grand,0, 7);
+	$tPropriété['typeCours'] = get_field('type_de_cours');
+}
+
+
+
+
 
 /*-------------------------------------------------------------
 ajout d'icone en fonction du type de cours
