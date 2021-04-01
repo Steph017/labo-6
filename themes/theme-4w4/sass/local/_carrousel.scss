@@ -40,12 +40,16 @@
     height: 5vh;
     width: 100vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: #EE82AF;
     @include desktop{
         height: 8vh;
         width: 100vw;
+    }
+
+    input{
+        margin: 5px;
     }
 
     a{

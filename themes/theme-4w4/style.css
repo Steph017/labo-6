@@ -741,6 +741,13 @@ body {
 .main-navigation ul ul a {
   width: 200px;
   padding-left: 15px;
+  -webkit-transition: scale .3s;
+  transition: scale .3s;
+}
+
+.main-navigation ul ul a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .main-navigation ul li:hover > ul,
@@ -835,7 +842,6 @@ menu tablet
     display: block;
     position: absolute;
     width: 200px;
-    height: 650px;
     background-color: #f8cfdf;
   }
   .main-navigation.toggled ul li:hover ul a,
@@ -1432,9 +1438,9 @@ h1.entry-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1446,6 +1452,10 @@ h1.entry-title {
     height: 8vh;
     width: 100vw;
   }
+}
+
+.carrouselBoutton input {
+  margin: 5px;
 }
 
 .carrouselBoutton a {

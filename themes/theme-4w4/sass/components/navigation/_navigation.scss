@@ -28,6 +28,12 @@
 			a {
 				width: 200px;
 				padding-left: 15px;
+				transition: scale .3s;
+			}
+
+			a:hover {
+				
+				transform: scale(0.9);
 			}
 			
 		}
@@ -73,6 +79,8 @@
 		text-decoration: none;
 		padding: .5rem;
 	}
+
+	
 
 	.current_page_item > a,
 	.current-menu-item > a,
@@ -133,7 +141,6 @@ menu tablet
 			display: block;
 			position: absolute;
 			width: 200px;
-			height: 650px;
 			background-color: rgb(248, 207, 223);
 			a{
 				border-bottom: black 2px solid;
